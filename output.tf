@@ -1,11 +1,11 @@
 output "bucket_name" {
-  value = module.s3-rdm-ui.bucket_name
+  value = aws_s3_bucket.react-bucket.id
 }
 
-output "cloudfront" {
-  value = module.cloudfront-rdm-ui.domain_name
+output "domain_name" {
+  value = aws_cloudfront_distribution.cloudfront.domain_name
 }
 
 output "domain_details" {
-  value = module.cloudfront-rdm-ui.domain_details
+  value = aws_acm_certificate.rdm_ui_certificate.domain_validation_options
 }
